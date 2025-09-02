@@ -71,7 +71,7 @@ export async function compressText(input: string, algo: 'huffman' | 'deflate', t
   // Deflate generally wins for arbitrary text
   if (algo === 'deflate') {
     // Level heuristic from target: higher target => stronger compression
-    const level = Math.max(1, Math.min(9, Math.round((targetPercent / 100) * 9)))
+    const level = Math.max(1, Math.min(9, Math.round((targetPercent / 100) * 9))) as 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     const deflated = pako.deflate(normalized, { level })
     return new Blob([deflated], { type: 'application/octet-stream' })
   }

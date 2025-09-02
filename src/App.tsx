@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, forwardRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Download, Gauge, Scissors } from 'lucide-react'
 import { ThemeToggle } from '@/lib/theme'
@@ -36,17 +36,16 @@ function Select({ value, onChange, children }: { value: string; onChange: (v: st
   )
 }
 
-const Input = (
-  { ...props }: React.InputHTMLAttributes<HTMLInputElement>
-) => (
+const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>((props, ref) => (
   <input
+    ref={ref}
     {...props}
     className={
       'w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm file:mr-4 file:rounded-md file:border-0 file:bg-slate-900 file:px-4 file:py-2 file:text-white hover:file:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 ' +
       (props.className ?? '')
     }
   />
-)
+))
 
 function formatBytes(size: number) {
   if (size === 0) return '0 B'

@@ -354,7 +354,7 @@ export default function ImageEditor() {
 
               <div className="flex flex-wrap gap-3 pt-2">
                 <button onClick={() => { setCropRect(null); setIsCropping(true) }} className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800/50">Crop</button>
-                <button onClick={() => { setFilters({ brightness: 100, contrast: 100, saturation: 100, hue: 0, blur: 0 }); setRotation(0); setText(''); setTextSize(32); setTextColor('#ffffff'); setCropRect(null) }} className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800/50">Reset</button>
+                <button onClick={() => { setFilters({ brightness: 100, contrast: 100, saturation: 100, hue: 0, blur: 0 }); setRotation(0); setTextLayers([]); setCropRect(null) }} className="rounded-md border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800/50">Reset</button>
                 <button onClick={download} className="rounded-md bg-slate-900 px-4 py-2 text-sm text-white hover:bg-slate-800">Export</button>
               </div>
             </div>
