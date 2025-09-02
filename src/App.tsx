@@ -275,7 +275,7 @@ export default function App() {
                     <option value="pdf">PDF (downsample + recompress)</option>
                   </Select>
                 </div>
-                <div>
+      <div>
                   <label className="mt-4 block text-sm font-medium text-slate-700 dark:text-slate-300">Preset</label>
                   <Select value={preset} onChange={(v) => setPreset(v as Preset)}>
                     <option value="max-quality">Max quality</option>
@@ -357,6 +357,6 @@ export default function App() {
 
         <Footer />
       </div>
-    </div>
+      </div>
   )
 }
